@@ -1,0 +1,52 @@
+{
+  "name": "gulp-sri",
+  "description": "SRI integrety hash generator for gulp. Based on gulp-buster.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Matthew Conlen",
+    "email": "code@mathisonian.com"
+  },
+  "main": "./index.js",
+  "keywords": [
+    "gulpplugin",
+    "sri",
+    "sri hash",
+    "cache",
+    "fingerprint",
+    "fingerprinting",
+    "revision",
+    "revisioning",
+    "workflow",
+    "webdev",
+    "web development"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathisonian/gulp-sri.git"
+  },
+  "dependencies": {
+    "bluebird": "^2.3.2",
+    "gulp-util": "^3.0.1",
+    "lodash.defaults": "^2.4.1",
+    "object-assign": "^1.0.0",
+    "sri-toolbox": "^0.1.3",
+    "through": "^2.3.4"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mathisonian/gulp-sri/issues"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.2",
+    "mocha": "^2.0.0",
+    "should": "^4.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- -R dot",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly"
+  }
+}

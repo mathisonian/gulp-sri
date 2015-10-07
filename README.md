@@ -1,5 +1,6 @@
 # [gulp](https://github.com/gulpjs/gulp/)-sri
 [![npm version](http://img.shields.io/npm/v/gulp-sri.svg)](https://npmjs.org/package/gulp-sri)
+[![Build Status](https://travis-ci.org/mathisonian/gulp-sri.svg?branch=master)](https://travis-ci.org/mathisonian/gulp-sri)
 
 [SubResource Integrity](http://www.w3.org/TR/SRI/) hashes generator for gulp. Code heavily borrowed from [gulp-buster](https://github.com/UltCombo/gulp-buster).
 

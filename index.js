@@ -16,7 +16,6 @@ var crypto = require('crypto'),
 	OPTION_TYPES = {
 		fileName: ['String'],
 		algorithms: ['Array'],
-		type: ['String'],
 		transform: ['Function'],
 		formatter: ['Function'],
 	},
@@ -28,7 +27,6 @@ function error(msg) {
 
 function hash(file, options) {
 	return sriToolbox.generate({
-		type: options.type,
 		algorithms: options.algorithms
 	}, file.contents.toString());
 }

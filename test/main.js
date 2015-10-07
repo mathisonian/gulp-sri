@@ -57,7 +57,7 @@ describe('Configuration-independent internal methods', function() {
 
 	describe('_assignOptions()', function() {
 		it('should assign options', function() {
-			var options = { type: 'application/javascript', algorithms: ['sha256'] };
+			var options = { algorithms: ['sha256'] };
 			bust._assignOptions(options).should.eql(assign({}, bust._DEFAULT_OPTIONS, options));
 		});
 

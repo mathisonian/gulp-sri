@@ -4,7 +4,11 @@ var bust = require('..'),
 	assign = require('object-assign'),
 	gutil = require('gulp-util'),
 	fileContentStr = 'foo',
-	file2ContentStr = 'bar',
+	file2ContentStr = [ // Transparent.gif
+		0x47, 0x49, 0x46, 0x38, 0x39, 0x61, 0x01, 0x00, 0x01, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00,
+		0xff, 0xff, 0xff, 0x21, 0xf9, 0x04, 0x01, 0x00, 0x00, 0x00, 0x00, 0x2c, 0x00, 0x00, 0x00, 0x00,
+		0x01, 0x00, 0x01, 0x00, 0x00, 0x02, 0x01, 0x44, 0x00, 0x3b
+	],
 	file = new gutil.File({
 		cwd: 'C:/users/ult/',
 		base: 'C:/users/ult/test',
@@ -195,6 +199,14 @@ describe('Configuration options', function() {
 			stream.end(file);
 		});
 
+		it('should correctly generate the hash for a binary file', function(done) {
+			var stream = bust({ algorithms: ['sha256'] });
+			stream.on('data', function(newFile) {
+				JSON.parse(newFile.contents.toString())[file2BustPath].should.be.exactly('sha256-7xlVrnV8i5ZsgySDUDMb06MPZYztEfOH+OvwWrM2hik=');
+				done();
+			});
+			stream.end(file2);
+		});
 	});
 
 	describe('transform', function() {

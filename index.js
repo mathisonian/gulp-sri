@@ -28,7 +28,7 @@ function error(msg) {
 function hash(file, options) {
 	return sriToolbox.generate({
 		algorithms: options.algorithms
-	}, file.contents.toString());
+	}, file.contents);
 }
 
 function sliceHash(hash, options) {
